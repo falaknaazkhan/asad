@@ -1,0 +1,43 @@
+t=0:0.1:10;
+Vm=2;
+Wm=2;
+Vc=5;
+Wc=15;
+m1=0.5;
+m2=1;
+m3=1.5;
+
+y=Vm*sin(Wm*t);
+subplot(2,3,1);
+plot(t,y);
+xlabel("Time");
+ylabel("Ampletude");
+title("Modulating signle");
+
+c=Vc*sin(Wc*t);
+subplot(2,3,2);
+plot(t,c);
+xlabel("Time");
+ylabel("Ampletude");
+title("Carrier signle");
+
+Vam1=Vc*(1+m1*sin(Wm*t)).*sin(Wc*t);
+subplot(2,3,3);
+plot(t,Vam1);
+xlabel("Time");
+ylabel("Ampletude");
+title("Undermodulated signle");
+
+Vam2=Vc*(1+m2*sin(Wm*t)).*sin(Wc*t);
+subplot(2,3,4);
+plot(t,Vam2);
+xlabel("Time");
+ylabel("Ampletude");
+title("Modulated signle");
+
+Vam3=Vc*(1+m3*sin(Wm*t)).*sin(Wc*t);
+subplot(2,3,5);
+plot(t,Vam3);
+xlabel("Time");
+ylabel("Ampletude");
+title("Overmodulated signle");
